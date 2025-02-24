@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <!-- Background and Overlay -->
+  <div class="background-wrapper"></div>
+
   <!-- Fixed Navigation -->
   <nav id="navbar">
     <ul>
@@ -47,16 +50,24 @@
   <section id="activities" class="container split">
     <div class="half">
       <h2>Outdoor Activities</h2>
-      <p>Enjoy the fresh sea air and curated activities. (Insert details or illustrations.)</p>
+  <!-- Wrap images in a div to apply flexbox to only the images -->
+    <div class="image-container">
+      <img src="assets/images/croquet.jpg" alt="Croquet">
+      <img src="assets/images/petanque.jpg" alt="Petanque">
+      <img src="assets/images/croquet.jpg" alt="Croquet">
+      <img src="assets/images/petanque.jpg" alt="Petanque">
+    </div>
+    <p>Enjoy the fresh sea air and curated activities. (Insert details or illustrations.)</p>
     </div>
     <div class="half">
       <h2>What's Around</h2>
+      <img src="assets/images/fb.jpg" alt="fb">
       <p>Discover local attractions and charming spots near La Rochelle. (Insert details or illustrations.)</p>
     </div>
   </section>
 
   <!-- Special Guests Container -->
-  <section id="guests" class="container full">
+  <section id="guests" class="containerOxana full">
     <div class="content">
       <h2>Special Guests</h2>
       <p>We are honored to share this day with our beloved family and friends.</p>
@@ -88,6 +99,6 @@
   </section>
 
   <!-- Link to JavaScript -->
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

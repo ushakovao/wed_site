@@ -1,8 +1,81 @@
-/* CSS Variables for easy customization */
 :root {
-  --primary-color: #0A2F66;   /* Royal Blue */
-  --accent-color: #D4AF37;    /* Gold */
-  --font-family: 'Arial', sans-serif;  /* Change this to any font */
+  --primary-color: #02013D;  /* Royal Blue */
+  --accent-color: #D4AF37;   /* Gold */
+  --font-family: 'Arial', sans-serif;
+}
+
+/* Ensure Full-Page Background */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  color: #ccc;
+  line-height: 1.6;
+}
+/* Background Wrapper */
+.background-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../assets/images/parallax-placeholder.jpg') no-repeat center center fixed;
+  /*background: red;*/
+  background-size: cover;
+  z-index: -10;
+}
+
+
+/* Blue Overlay with Gradual Opacity */
+.background-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(to right,
+    rgba(2, 1, 61, 0) 0%,
+    rgba(2, 1, 61, 0.5) 2%,
+    rgba(2, 1, 61, 0.95) 35%,
+    rgba(2, 1, 61, 1) 50%,
+    rgba(2, 1, 61, 0.95) 65%,
+    rgba(2, 1, 61, 0.5) 98%,
+    rgba(2, 1, 61, 0) 100%
+  );
+  z-index: -9;
+}
+
+
+
+/* Parallax Background for Welcome Section */
+.parallax-bg {
+  background-image: url('../assets/images/background.jpg'); /* Replace with your stock/vector art */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensuring Content Stays on Top */
+main {
+  position: relative;
+  z-index: 2;
+}
+
+/* Welcome Section Styling */
+.welcome-section {
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 3;
 }
 
 /* Basic Reset */
@@ -10,12 +83,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-body {
-  font-family: var(--font-family);
-  background: var(--primary-color);
-  color: #ADD8E6;
-  line-height: 1.6;
 }
 
 /* Navigation Styles */
@@ -48,9 +115,8 @@ nav ul li a:hover {
 /* Container Styles */
 .container {
   padding: 100px 20px;
-  min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 .container.full {
@@ -60,10 +126,44 @@ nav ul li a:hover {
   display: flex;
   flex-wrap: wrap;
 }
+
 .container.split .half {
   flex: 1 1 50%;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
+
+/* Create a grid for the images */
+.half .image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Style for each image */
+.half img {
+  width: 48%;
+  margin: 1%;
+}
+
+
+
+
+.containerOxana {
+  padding: 10px 20px;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.containerOxana.full {
+  width: 100%;
+}
+
 
 /* Content Fade-In Animation */
 .content {
@@ -76,13 +176,7 @@ nav ul li a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Parallax Background for Welcome Section */
-.parallax-bg {
-  background-image: url('../assets/images/parallax-placeholder.jpg'); /* Replace with your stock/vector art */
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-}
+
 
 /* PayPal Link Styling */
 .paypal-link {

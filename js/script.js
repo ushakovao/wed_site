@@ -5,7 +5,6 @@
   const minutesSpan = document.getElementById('minutes');
   const secondsSpan = document.getElementById('seconds');
 
-  // Wedding date: 14:00, 06/09/2025 (ISO 8601 format adjusted for local time)
   const weddingDate = new Date('2025-09-06T14:00:00');
 
   function updateCountdown() {
@@ -59,10 +58,9 @@ faders.forEach(fader => {
 });
 
 // Hover Sound Effects
-const hoverSound = new Audio('hover-sound.mp3'); // Provide your subtle sound effect file here
+const hoverSound = new Audio('hover-sound.mp3');
 document.querySelectorAll('a, button, .half').forEach(el => {
   el.addEventListener('mouseover', () => {
-    // Play the sound effect on hover
     hoverSound.currentTime = 0;
     hoverSound.play();
   });
