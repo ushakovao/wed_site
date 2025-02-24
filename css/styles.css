@@ -1,0 +1,121 @@
+/* CSS Variables for easy customization */
+:root {
+  --primary-color: #0A2F66;   /* Royal Blue */
+  --accent-color: #D4AF37;    /* Gold */
+  --font-family: 'Arial', sans-serif;  /* Change this to any font */
+}
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--font-family);
+  background: var(--primary-color);
+  color: #ADD8E6;
+  line-height: 1.6;
+}
+
+/* Navigation Styles */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+nav ul li {
+  margin: 10px;
+}
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: background 0.3s;
+}
+nav ul li a:hover {
+  background: var(--accent-color);
+  color: #000;
+}
+
+/* Container Styles */
+.container {
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container.full {
+  width: 100%;
+}
+.container.split {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container.split .half {
+  flex: 1 1 50%;
+  padding: 20px;
+}
+
+/* Content Fade-In Animation */
+.content {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease-out forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Parallax Background for Welcome Section */
+.parallax-bg {
+  background-image: url('../assets/images/parallax-placeholder.jpg'); /* Replace with your stock/vector art */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* PayPal Link Styling */
+.paypal-link {
+  background: var(--accent-color);
+  color: #000;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.paypal-link:hover {
+  background: #fff;
+  color: var(--accent-color);
+}
+
+/* Images Styling */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 5px solid var(--accent-color);
+  margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container.split {
+    flex-direction: column;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+  nav ul li {
+    margin: 5px 0;
+  }
+}
