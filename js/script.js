@@ -58,10 +58,11 @@ faders.forEach(fader => {
 });
 
 // Hover Sound Effects
-const hoverSound = new Audio('hover-sound.mp3');
 document.querySelectorAll('a, button, .half').forEach(el => {
-  el.addEventListener('mouseover', () => {
-    hoverSound.currentTime = 0;
-    hoverSound.play();
+  el.addEventListener('mouseenter', () => {
+    const sound = new Audio('assets/sounds/hover-sound.mp3'); // Adjust path if needed
+    sound.volume = 0.8;
+    sound.play().catch(() => {}); // Prevent errors if play() is blocked
   });
 });
+
